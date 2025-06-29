@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    .output {
+      margin: 10px 0;
+      padding: 10px;
+      background: #fff;
+      border-left: 5px solid #4CAF50;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Array Operations</h1>
+
+  <h2>1. Sorted Array</h2>
+  <div id="sortedArray" class="output"></div>
+
+  <h2>2. Concatenated Array</h2>
+  <div id="concatenatedArray" class="output"></div>
+
+  <h2>3. Array After Removing First Element</h2>
+  <div id="removedFirstElement" class="output"></div>
+
+  <script>
+    // 1. Sort an Array
+    let numbers = [34, 10, 67, 23, 89];
+    let sortedNumbers = [...numbers].sort((a, b) => a - b); // using spread to avoid mutating original
+    document.getElementById("sortedArray").innerText = 
+      `Original Array: [${numbers}] \nSorted Array: [${sortedNumbers}]`;
+
+    // 2. Concatenate Two Arrays
+    let arr1 = ["Red", "Green"];
+    let arr2 = ["Blue", "Yellow"];
+    let concatenated = arr1.concat(arr2);
+    document.getElementById("concatenatedArray").innerText = 
+      `Array 1: [${arr1}] \nArray 2: [${arr2}] \nConcatenated: [${concatenated}]`;
+
+    // 3. Remove First Element
+    let fruits = ["Apple", "Banana", "Cherry", "Mango"];
+    let removed = fruits.shift();
+    document.getElementById("removedFirstElement").innerText = 
+      `Original First Element Removed: ${removed} \nUpdated Array: [${fruits}]`;
+  </script>
+
+</body>
+</html>
